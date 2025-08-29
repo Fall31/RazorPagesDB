@@ -3,15 +3,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WARazorDB.Data
 {
-    public class TareaDBContext : DbContext
+    public class TareaDbContext : DbContext
     {
-        public TareaDBContext(DbContextOptions<TareaDBContext> options): base(options) 
+        public TareaDbContext(DbContextOptions<TareaDbContext> options)
+            : base(options)
         {
-
         }
+
         public DbSet<Tarea> Tareas { get; set; }
-        protected TareaDBContext() 
-        {
-                    }
     }
 }
