@@ -1,5 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
+using WARazorDB.Data;
+using WARazorDB.Interfaces;
+using WARazorDB.Seeders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,9 +11,10 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<WARazorDB.Data.TareaDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IDbInitializer, TareaSeeder>();
 
 var app = builder.Build();
-
+SeedDatabase();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -29,3 +33,12 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+
+void SeedDatabase()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var initializer = scope.ServiceProvider.GetRequiredService<IDbInitializer>();
+        initializer.Initialize(scope.ServiceProvider);
+    }
+}

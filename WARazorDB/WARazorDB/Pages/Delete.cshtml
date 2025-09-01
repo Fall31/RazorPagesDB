@@ -19,10 +19,10 @@
             @Html.DisplayFor(model => model.Tarea.nombreTarea)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tarea.fechaNacimiento)
+            @Html.DisplayNameFor(model => model.Tarea.fechaVencimiento)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tarea.fechaNacimiento)
+            @Html.DisplayFor(model => model.Tarea.fechaVencimiento)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Tarea.estado)
@@ -37,7 +37,7 @@
             @Html.DisplayFor(model => model.Tarea.idUsuario)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="Tarea.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |

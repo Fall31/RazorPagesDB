@@ -34,7 +34,7 @@ namespace WARazorDB.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("fechaNacimiento")
+                    b.Property<DateTime>("fechaVencimiento")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("idUsuario")

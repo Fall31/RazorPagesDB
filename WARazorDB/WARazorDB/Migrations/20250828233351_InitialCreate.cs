@@ -18,7 +18,7 @@ namespace WARazorDB.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     nombreTarea = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    fechaNacimiento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    fechaVencimiento = table.Column<DateTime>(type: "datetime2", nullable: false),
                     estado = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     idUsuario = table.Column<int>(type: "int", nullable: false)
                 },

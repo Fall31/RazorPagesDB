@@ -30,7 +30,7 @@ namespace WARazorDB.Pages
                 return NotFound();
             }
 
-            var tarea =  await _context.Tareas.FirstOrDefaultAsync(m => m.Id == id);
+            var tarea = await _context.Tareas.FirstOrDefaultAsync(m => m.Id == id);
             if (tarea == null)
             {
                 return NotFound();
